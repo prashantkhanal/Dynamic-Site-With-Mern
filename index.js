@@ -20,9 +20,11 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-const authRoutes = require('./src/router/auth');
+const userSignupRoutes = require('./src/router/userSignup');
+const userSigninRoutes = require('./src/router/userLogin');
 
-app.use('/api/v1', authRoutes);
+app.use('/api/v1', userSignupRoutes);
+app.use('/api/v1', userSigninRoutes);
 
 const port = process.env.PORT || 5000;
 app.listen(port, (req, res) => {
